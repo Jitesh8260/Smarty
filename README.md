@@ -1,36 +1,108 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🤖 Smarty – AI-Powered Chatbot Assistant
 
-## Getting Started
+**Smarty** is a sleek and intelligent AI chatbot assistant built with the power of **Next.js**, **Tailwind CSS**, and **OpenRouter API**. Designed for modern web experiences, it combines clean UI, blazing-fast performance, and multiple AI models under the hood to deliver intelligent conversations – all hosted effortlessly on **Vercel**.
 
-First, run the development server:
+---
+
+## 🚀 Frontend Stack
+
+- **Next.js**
+  - React-based framework
+  - Server-side rendering (SSR)
+  - API Routes and optimized routing
+- **Tailwind CSS**
+  - Utility-first CSS framework
+  - Super clean and responsive UI design
+- **TypeScript** (optional)
+  - Strong typing for better dev experience
+
+---
+
+## 🧠 AI Layer / Backend Integration
+
+- **OpenRouter API**
+  - Free OpenAI alternative
+  - Supports multiple AI models like **Mixtral**, **Cohere**, and more
+- **Next.js API Routes**
+  - Built-in serverless functions for backend logic
+  - Simple and scalable integration for AI chat
+
+---
+
+## 🌐 Hosting & Deployment
+
+- **Vercel**
+  - Free hosting with one-click deploy
+  - Auto CI/CD setup
+  - Optimized for Next.js apps
+
+---
+
+## 📦 Packages & SDKs Used
+
+- `axios` or native `fetch` – for API communication
+- **Vercel AI SDK** (optional) – for streaming/chat flows
+- `dotenv` – secure environment variable management
+- `react-icons` / `heroicons` – for polished UI icons
+
+---
+
+## 🛠️ Installation & Setup
+
+### 1. Clone the Repository
 
 ```bash
+git clone https://github.com/your-username/smarty.git
+cd smarty
+```
+---
+2. Install Dependencies
+```
+npm install
+# or
+yarn
+```
+
+---
+3. Set Up Environment Variables
+Create a .env.local file in the root directory:
+```
+
+OPENROUTER_API_KEY=your_openrouter_api_key
+```
+
+---
+4. Start the Development Server
+```
 npm run dev
 # or
 yarn dev
-# or
-pnpm dev
-# or
-bun dev
+
 ```
+Visit your app at: http://localhost:3000
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+ 📊 Features
+💬 Chat with AI models using OpenRouter API
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+⚡ Fast serverless backend using API Routes
 
-## Learn More
+🎨 Clean and responsive UI with Tailwind CSS
 
-To learn more about Next.js, take a look at the following resources:
+🔐 Secure key management using dotenv
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+🌗 Optional dark/light mode support
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+🧠 Model switching capability (Mixtral, Cohere, etc.)
 
-## Deploy on Vercel
+---
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+🙌 Thank You!
+Thanks for checking out Smarty!
+If you found this helpful or cool, leave a ⭐ on the repo or contribute to make it even better.
+Let’s build smarter tools for everyone – together! 🧠✨
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+---
+
+
