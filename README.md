@@ -22,7 +22,7 @@ Smarty is a sleek, fast, and privacy-respecting AI chatbot built with **Next.js*
 
 ## 🚀 Demo
 
-> 🧠 Try it live: [smartyy.vercel.app](https://smartyy.vercel.app)
+> 🧠 Try it live: [Available Soon]()
 
 ![Smarty Chatbot UI - Light & Dark Mode](./public/demo.png)
 
@@ -35,7 +35,6 @@ Smarty is a sleek, fast, and privacy-respecting AI chatbot built with **Next.js*
 - [OpenAI API](https://platform.openai.com/)
 - [React Context + Hooks](https://reactjs.org/)
 - [Lottie Animations](https://lottiefiles.com/)
-- [Vercel Deployment](https://vercel.com/)
 
 ---
 
@@ -87,6 +86,6 @@ OPENAI_API_KEY=your-key-here
 
 ## 📄 License
 
-MIT © [Jitesh Bhakat](https://github.com/jiteshbhakat)
+MIT © [Jitesh Bhakat](https://github.com/jitesh8260)
 
 > 💡 *Smarty is a personal AI companion — use it, customize it, and make it yours.*
