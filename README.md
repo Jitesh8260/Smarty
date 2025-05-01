@@ -1,108 +1,92 @@
-# 🤖 Smarty – AI-Powered Chatbot Assistant
+# 🤖 Smarty — Your Smart AI Chat Assistant
 
-**Smarty** is a sleek and intelligent AI chatbot assistant built with the power of **Next.js**, **Tailwind CSS**, and **OpenRouter API**. Designed for modern web experiences, it combines clean UI, blazing-fast performance, and multiple AI models under the hood to deliver intelligent conversations – all hosted effortlessly on **Vercel**.
+![License](https://img.shields.io/badge/license-MIT-blue.svg)
+![Status](https://img.shields.io/badge/status-active-brightgreen)
+![Made with](https://img.shields.io/badge/Made%20with-Next.js%20%26%20Tailwind-blue)
 
----
-
-## 🚀 Frontend Stack
-
-- **Next.js**
-  - React-based framework
-  - Server-side rendering (SSR)
-  - API Routes and optimized routing
-- **Tailwind CSS**
-  - Utility-first CSS framework
-  - Super clean and responsive UI design
-- **TypeScript** (optional)
-  - Strong typing for better dev experience
+Smarty is a sleek, fast, and privacy-respecting AI chatbot built with **Next.js**, **Tailwind CSS**, and **OpenAI API**. Designed to feel premium, it supports light/dark modes, custom styling, and interactive UI—just like ChatGPT, but tailored to your own needs.
 
 ---
 
-## 🧠 AI Layer / Backend Integration
+## 🌟 Features
 
-- **OpenRouter API**
-  - Free OpenAI alternative
-  - Supports multiple AI models like **Mixtral**, **Cohere**, and more
-- **Next.js API Routes**
-  - Built-in serverless functions for backend logic
-  - Simple and scalable integration for AI chat
-
----
-
-## 🌐 Hosting & Deployment
-
-- **Vercel**
-  - Free hosting with one-click deploy
-  - Auto CI/CD setup
-  - Optimized for Next.js apps
+- 💬 Smooth real-time chat experience  
+- 🌗 Elegant Light & Dark mode with emoji toggle  
+- 📂 Sidebar with `New Chat` & `Chat History`  
+- 🔕 Smart notification with red-dot indicator  
+- ✨ Beautiful, responsive design with animations  
+- ⚙️ Built with Next.js App Router & Tailwind CSS  
+- 🔐 No database required (yet) — works fully local!
 
 ---
 
-## 📦 Packages & SDKs Used
+## 🚀 Demo
 
-- `axios` or native `fetch` – for API communication
-- **Vercel AI SDK** (optional) – for streaming/chat flows
-- `dotenv` – secure environment variable management
-- `react-icons` / `heroicons` – for polished UI icons
+> 🧠 Try it live: [smartyy.vercel.app](https://smartyy.vercel.app)
+
+![Smarty Chatbot UI - Light & Dark Mode](./public/demo.png)
 
 ---
 
-## 🛠️ Installation & Setup
+## 🛠️ Tech Stack
 
-### 1. Clone the Repository
+- [Next.js 14+](https://nextjs.org/)
+- [Tailwind CSS](https://tailwindcss.com/)
+- [OpenAI API](https://platform.openai.com/)
+- [React Context + Hooks](https://reactjs.org/)
+- [Lottie Animations](https://lottiefiles.com/)
+- [Vercel Deployment](https://vercel.com/)
+
+---
+
+## 📦 Installation
 
 ```bash
-git clone https://github.com/your-username/smarty.git
+git clone https://github.com/yourusername/smarty.git
 cd smarty
-```
----
-2. Install Dependencies
-```
 npm install
-# or
-yarn
-```
-
----
-3. Set Up Environment Variables
-Create a .env.local file in the root directory:
-```
-
-OPENROUTER_API_KEY=your_openrouter_api_key
-```
-
----
-4. Start the Development Server
-```
 npm run dev
-# or
-yarn dev
+```
+
+> ⚠️ Make sure to add your **OpenAI API Key** in `.env.local`:
 
 ```
-Visit your app at: http://localhost:3000
+OPENAI_API_KEY=your-key-here
+```
 
 ---
 
- 📊 Features
-💬 Chat with AI models using OpenRouter API
+## 🧠 Folder Structure
 
-⚡ Fast serverless backend using API Routes
-
-🎨 Clean and responsive UI with Tailwind CSS
-
-🔐 Secure key management using dotenv
-
-🌗 Optional dark/light mode support
-
-🧠 Model switching capability (Mixtral, Cohere, etc.)
+```
+/app           → Next.js App Router Pages  
+/components    → Reusable UI Components  
+/context       → Theme & Notification Contexts  
+/public        → Static assets (e.g., animations, icons)  
+/styles        → Tailwind + Custom CSS  
+```
 
 ---
 
-🙌 Thank You!
-Thanks for checking out Smarty!
-If you found this helpful or cool, leave a ⭐ on the repo or contribute to make it even better.
-Let’s build smarter tools for everyone – together! 🧠✨
+## 📸 Screenshots
+
+| Light Mode                             | Dark Mode                              |
+| ------------------------------------- | -------------------------------------- |
+| ![Light](./public/light.png)         | ![Dark](./public/dark.png)            |
 
 ---
 
+## ✅ Upcoming Features
 
+- 🧠 Chat memory & context saving  
+- 🗃️ Export chat history  
+- 🪄 More Lottie animations  
+- 🌐 Multi-language support  
+
+---
+
+## 📄 License
+
+MIT © [Jitesh Bhakat](https://github.com/jiteshbhakat)
+
+> 💡 *Smarty is a personal AI companion — use it, customize it, and make it yours.*
