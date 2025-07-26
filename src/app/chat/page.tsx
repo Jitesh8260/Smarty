@@ -73,7 +73,7 @@ export default function ChatPage() {
     setIsLoading(true)
   
     try {
-      // Send the   updated messages (with  the user's message included) to the backend
+      // Send the   updated messages (with   the user's message included) to the backend
       const res = await fetch('/api/chat', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
