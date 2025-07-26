@@ -2,10 +2,10 @@ version: 0.0
 os: linux
 files:
   - source: /
-    destination: /home/ec2-user/smarty
+    destination: /home/jitesh/smarty
 
 hooks:
   AfterInstall:
     - location: deploy_app.sh
       timeout: 300
-      runas: ec2-user
+      runas: jitesh
