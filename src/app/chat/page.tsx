@@ -83,7 +83,8 @@ export default function ChatPage() {
       if (!res.ok) throw new Error('Failed to get a response from the bot')
   
       const data = await res.json()
-      const assistantReply = data?.reply || "Sorry, I couldn't understand that."
+      const assistantReply = data?.choices?.[0]?.message?.content || "Sorry, I couldn't understand that."
+
   
       // Add only the assistant's reply here
       setCurrentSession(prev => ({
