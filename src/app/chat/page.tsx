@@ -3,7 +3,7 @@
 import { useState, useEffect, useRef } from 'react'
 import { v4 as uuidv4 } from 'uuid'
 import Navbar from '../components/Navbar'
-import Sidebar from '../components/Sidebar' // Import Sidebar component
+import Image from 'next/image'
 
 interface Message {
   role: string
@@ -32,10 +32,9 @@ export default function ChatPage() {
   useEffect(() => {
     const storedSessions = JSON.parse(localStorage.getItem('chatSessions') || '[]')
     if (storedSessions.length > 0) {
-      // Limit to 5 sessions
       const limitedSessions = storedSessions.slice(-5)
       setSessions(limitedSessions)
-      setCurrentSession(limitedSessions[limitedSessions.length - 1]) // Load last session
+      setCurrentSession(limitedSessions[limitedSessions.length - 1])
     }
   }, [])
 
@@ -43,14 +42,11 @@ export default function ChatPage() {
   useEffect(() => {
     if (currentSession.messages.length > 0) {
       const updated = [...sessions.filter(s => s.id !== currentSession.id), currentSession]
-      
-      // Limit to 5 sessions before saving to localStorage
       const limitedSessions = updated.slice(-5)
-
       setSessions(limitedSessions)
       localStorage.setItem('chatSessions', JSON.stringify(limitedSessions))
     }
-  }, [currentSession.messages])
+  }, [currentSession, sessions])
 
   const sendMessage = async () => {
     if (!input.trim()) {
@@ -60,39 +56,35 @@ export default function ChatPage() {
       }))
       return
     }
-  
+
     const userMessage = { role: 'user', content: input }
-    
-    // Immediately update state with user message (only once)
+
     setCurrentSession(prev => ({
       ...prev,
       messages: [...prev.messages, userMessage]
     }))
-  
+
     setInput('')
     setIsLoading(true)
-  
+
     try {
-      // Send the   updated messages (with   the user's message included) to the backend
       const res = await fetch('/api/chat', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ messages: [...currentSession.messages, userMessage] }) // Send the full message history
+        body: JSON.stringify({ messages: [...currentSession.messages, userMessage] })
       })
-  
+
       if (!res.ok) throw new Error('Failed to get a response from the bot')
-  
+
       const data = await res.json()
       const assistantReply = data?.choices?.[0]?.message?.content || "Sorry, I couldn't understand that."
 
-  
-      // Add only the assistant's reply here
       setCurrentSession(prev => ({
         ...prev,
         title: prev.title === 'New Chat' && input ? input.slice(0, 20) : prev.title,
         messages: [...prev.messages, { role: 'assistant', content: assistantReply }]
       }))
-    } catch (error) {
+    } catch {
       setCurrentSession(prev => ({
         ...prev,
         messages: [...prev.messages, { role: 'assistant', content: 'Oops! Something went wrong. Try again later.' }]
@@ -101,7 +93,6 @@ export default function ChatPage() {
       setIsLoading(false)
     }
   }
-  
 
   useEffect(() => {
     messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' })
@@ -110,7 +101,6 @@ export default function ChatPage() {
   const handleNewChat = () => {
     if (currentSession.messages.length > 0) {
       const updated = [...sessions.filter(s => s.id !== currentSession.id), currentSession]
-      // Limit to 5 sessions before saving
       const limitedSessions = updated.slice(-5)
       setSessions(limitedSessions)
       localStorage.setItem('chatSessions', JSON.stringify(limitedSessions))
@@ -126,23 +116,18 @@ export default function ChatPage() {
   }
 
   const handleClearChat = () => {
-    // Remove current session from list
     const updatedSessions = sessions.filter(s => s.id !== currentSession.id)
-  
-    // Update state and localStorage
     setSessions(updatedSessions)
     localStorage.setItem('chatSessions', JSON.stringify(updatedSessions))
-  
-    // Create a new empty session
+
     const newSession: ChatSession = {
       id: uuidv4(),
       title: 'New Chat',
       messages: []
     }
-  
+
     setCurrentSession(newSession)
   }
-  
 
   const handleChatClick = (selectedSession: ChatSession) => {
     setCurrentSession(selectedSession)
@@ -170,10 +155,12 @@ export default function ChatPage() {
                 }`}
               >
                 <div className="relative flex-shrink-0">
-                  <img
-                    src={msg.role === 'user' ? 'user.png' : 'bot.png'}
+                  <Image
+                    src={msg.role === 'user' ? '/user.png' : '/bot.png'}
                     alt={msg.role === 'user' ? 'User Avatar' : 'Bot Avatar'}
-                    className="w-8 h-8 rounded-full"
+                    width={32}
+                    height={32}
+                    className="rounded-full"
                   />
                 </div>
                 <div

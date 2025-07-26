@@ -2,19 +2,18 @@
 import Link from 'next/link';
 import React, { useEffect } from 'react';
 import { Moon, Sun } from 'lucide-react';
-import { useTheme } from '../context/ThemeContext'; // Import the context
+import { useTheme } from '../context/ThemeContext';
 
 const HeroSection: React.FC = () => {
-  const { theme, toggleTheme } = useTheme(); // Use the context
+  const { theme, toggleTheme } = useTheme();
 
   useEffect(() => {
-    // On page load, ensure the theme is applied
     if (theme === 'dark') {
       document.documentElement.classList.add('dark');
     } else {
       document.documentElement.classList.remove('dark');
     }
-  }, [theme]); // Reapply theme whenever it changes
+  }, [theme]);
 
   return (
     <div className="relative h-screen w-full overflow-hidden bg-gradient-to-br from-sky-100 to-indigo-200 dark:from-gray-900 dark:to-black flex items-center justify-center transition-colors duration-500">
@@ -40,7 +39,7 @@ const HeroSection: React.FC = () => {
 
       {/* Toggle Dark Mode */}
       <button
-        onClick={toggleTheme} // Use the toggle function from the context
+        onClick={toggleTheme}
         className="absolute top-4 right-4 p-2 rounded-full bg-white/20 dark:bg-white/10 backdrop-blur-sm text-gray-800 dark:text-gray-200 hover:bg-white/30 dark:hover:bg-white/20 transition-colors"
         aria-label="Toggle dark mode"
       >
@@ -52,7 +51,7 @@ const HeroSection: React.FC = () => {
         
         {/* Chat bubble */}
         <div className="relative backdrop-blur-md bg-white/80 dark:bg-white/5 p-4 rounded-xl mb-4 shadow-xl max-w-xs border border-white dark:border-gray-700/30">
-          <p className="text-gray-800 dark:text-gray-100 font-medium">Hello 👋, I'm Smarty!</p>
+          <p className="text-gray-800 dark:text-gray-100 font-medium">Hello 👋, I&apos;m Smarty!</p>
           <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-4 h-4 bg-white/80 dark:bg-white/5 rotate-45"></div>
         </div>
 

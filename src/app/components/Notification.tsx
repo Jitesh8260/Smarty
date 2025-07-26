@@ -1,5 +1,5 @@
 import React from 'react';
-import { Bell, MessageCircle, UserCheck, AlertTriangle } from 'lucide-react'; // Optional: install lucide-react for icons
+import {  MessageCircle, UserCheck, AlertTriangle } from 'lucide-react'; // Optional: install lucide-react for icons
 
 interface NotificationProps {
   isOpen: boolean;

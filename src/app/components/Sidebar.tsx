@@ -2,14 +2,13 @@
 
 import { X } from 'lucide-react'
 import { useEffect, useRef } from 'react'
-import { useRouter } from 'next/navigation'
+// Removed unused: import { useRouter } from 'next/navigation'
 
 interface SidebarProps {
   isOpen: boolean
   onClose: () => void
   onNewChat: () => void
   onChatClick: (session: { id: string; messages: { role: string; content: string }[] }) => void
-  chatHistory: { role: string; content: string }[]
   allSessions: { id: string; messages: { role: string; content: string }[] }[]
 }
 
@@ -18,11 +17,9 @@ export default function Sidebar({
   onClose,
   onNewChat,
   onChatClick,
-  chatHistory,
   allSessions
 }: SidebarProps) {
   const sidebarRef = useRef<HTMLDivElement>(null)
-  const router = useRouter()
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {

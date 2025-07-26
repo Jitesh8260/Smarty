@@ -1,6 +1,4 @@
 // src/app/page.tsx
-
-import Link from 'next/link'
 import HeroSection from './components/HeroSection'
 
 export default function Home() {
