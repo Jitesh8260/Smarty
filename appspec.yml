@@ -6,12 +6,10 @@ files:
     destination: /home/ubuntu/smarty
 
 hooks:
-  BeforeInstall:
+  AfterInstall:
     - location: chmod.sh
       timeout: 60
       runas: ubuntu
-
-  AfterInstall:
     - location: deploy_app.sh
       timeout: 300
       runas: ubuntu
