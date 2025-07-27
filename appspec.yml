@@ -1,11 +1,17 @@
 version: 0.0
 os: linux
+
 files:
   - source: /
-    destination: /home/jitesh/smarty
+    destination: /home/ubuntu/smarty
 
 hooks:
+  BeforeInstall:
+    - location: chmod.sh
+      timeout: 60
+      runas: ubuntu
+
   AfterInstall:
     - location: deploy_app.sh
       timeout: 300
-      runas: jitesh
+      runas: ubuntu
