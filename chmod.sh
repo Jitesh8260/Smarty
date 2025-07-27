@@ -1,2 +1,2 @@
 #!/bin/bash
-chmod +x /home/ubuntu/Smarty/deploy_app.sh
+chmod +x /home/ubuntu/smarty/deploy.sh

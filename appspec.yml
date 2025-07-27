@@ -3,13 +3,13 @@ os: linux
 
 files:
   - source: /
-    destination: /home/ubuntu/Smarty
+    destination: /home/ubuntu/smarty
 
 hooks:
   AfterInstall:
     - location: chmod.sh
       timeout: 60
       runas: ubuntu
-    - location: deploy_app.sh
+    - location: deploy.sh
       timeout: 300
       runas: ubuntu
