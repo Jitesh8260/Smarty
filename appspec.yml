@@ -7,9 +7,14 @@ files:
 
 hooks:
   AfterInstall:
-    - location: chmod.sh
-      timeout: 60
-      runas: ubuntu
-    - location: deploy.sh
+    - runas: root
       timeout: 300
-      runas: ubuntu
+      script: |
+        chmod +x /home/ubuntu/smarty/deploy.sh
+        sudo -u ubuntu bash -c '
+          cd /home/ubuntu/smarty
+          npm install --production
+          npm run build
+          npm install -g pm2
+          pm2 restart all || pm2 start npm --name "smarty" -- start
+        '
