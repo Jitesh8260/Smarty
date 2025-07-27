@@ -9,7 +9,7 @@ hooks:
   AfterInstall:
     - runas: root
       timeout: 300
-      script: |
+      run: |
         su - ubuntu -c '
           cd /home/ubuntu/smarty
           npm install --omit=dev
@@ -18,4 +18,3 @@ hooks:
           pm2 restart smarty || pm2 start npm --name "smarty" -- start
           pm2 save
         '
-
