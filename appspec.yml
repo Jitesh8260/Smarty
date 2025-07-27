@@ -1,3 +1,10 @@
+version: 0.0
+os: linux
+
+files:
+  - source: /
+    destination: /home/ubuntu/smarty
+
 hooks:
   AfterInstall:
     - runas: root
@@ -11,3 +18,4 @@ hooks:
           pm2 restart smarty || pm2 start npm --name "smarty" -- start
           pm2 save
         '
+
